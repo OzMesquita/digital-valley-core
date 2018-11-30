@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 public class ValidadorCPF {
 
 	public static boolean isCPF(String CPF) {
+		System.out.println(CPF);
 		 if(CPF.contains("."))
 	           CPF = CPF.replace(".", "");
 	       if(CPF.contains("-"))
@@ -58,9 +59,12 @@ public class ValidadorCPF {
 	           else dig11 = (char)(r + 48);
 
 	           // Verifica se os digitos calculados conferem com os digitos informados.
-	           if ((dig10 == CPF.charAt(9)) && (dig11 == CPF.charAt(10)))
+	           if ((dig10 == CPF.charAt(9)) && (dig11 == CPF.charAt(10))) {
 	               return(true);
-	           else return(false);
+		   } else {
+			   system.out.println(CPF);
+			   return(false);
+		   }
 	       } catch (InputMismatchException erro) {
 
 	           return(false);
