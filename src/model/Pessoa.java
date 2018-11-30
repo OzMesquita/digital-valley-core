@@ -68,12 +68,11 @@ public class Pessoa implements Serializable {
 	}
 
 	public void setCpf(String cpf) {
-		if (cpf.matches("^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?([0-9]{2})$")) {
+		if (ValidadorCPF.isCPF(cpf)) {
 			this.cpf = cpf;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O parâmetro CPF não pode ser nulo e deve ter um número de 11 caracteres, valor informado "
-							+ cpf);
+					"O CPF informado não é válido!");
 		}
 	}
 
