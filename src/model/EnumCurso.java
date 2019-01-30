@@ -18,15 +18,15 @@ public enum EnumCurso {
 	public static String value(Integer valor){
 		switch(valor){
 		case 1:
-			return "Ciência da Computação";
+			return "CIENCIA DA COMPUTACAO";
 		case 2:
-			return "Engenharia Civil";
+			return "ENGENHARIA CIVIL";
 		case 3:
-			return "Engenharia de Produção";
+			return "ENGENHARIA DE PRODUCAO";
 		case 4:
-			return "Engenharia de Software";
+			return "ENGENHARIA DE SOFTWARE";
 		case 5:
-			return "Engenharia Mecânica";
+			return "ENGENHARIA MECANICA";
 		default:
 			return "";
 		}
