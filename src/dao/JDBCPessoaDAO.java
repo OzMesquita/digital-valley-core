@@ -318,7 +318,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 		super.open();
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 		try {
-			String SQL = "SELECT * FROM pessoa_usuario";
+			String SQL = "SELECT * FROM pessoa_usuario ORDER BY nome ASC";
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -360,7 +360,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 		List<Pessoa> pessoas = new ArrayList<Pessoa>();
 
 		try {
-			String SQL = "SELECT * FROM pessoa_usuario AS u WHERE  UPPER(u.nome) like UPPER(?)";
+			String SQL = "SELECT * FROM pessoa_usuario AS u WHERE  UPPER(u.nome) like UPPER(?) ORDER BY nome ASC";
 
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setString(1, '%' + nome + '%');
@@ -442,7 +442,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 	@Override
 	public List<Pessoa> buscarPorNivel(int nivel, int inicio, int fim) {
 		super.open();
-		String SQL = "SELECT * FROM pessoa_usuario WHERE nivel = ? ORDER BY id_pessoa_usuario ASC LIMIT ? OFFSET ?";
+		String SQL = "SELECT * FROM pessoa_usuario WHERE nivel = ? ORDER BY nome ASC LIMIT ? OFFSET ?";
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setInt(1, nivel);
@@ -557,7 +557,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 	@Override
 	public List<Pessoa> buscarPorNomeENivel(String nome, int nivel, int inicio, int fim) {
 		super.open();
-		String SQL = "SELECT * FROM pessoa_usuario WHERE nivel = ? AND UPPER(nome) LIKE UPPER(?) ORDER BY id_pessoa_usuario ASC LIMIT ? OFFSET ?";
+		String SQL = "SELECT * FROM pessoa_usuario WHERE nivel = ? AND UPPER(nome) LIKE UPPER(?) ORDER BY nome ASC LIMIT ? OFFSET ?";
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setInt(1, nivel);
@@ -595,7 +595,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 	@Override
 	public List<Pessoa> buscarPorNome(String nome, int inicio, int fim) {
 		super.open();
-		String SQL = "SELECT * FROM pessoa_usuario WHERE UPPER(nome) LIKE UPPER(?) ORDER BY id_pessoa_usuario ASC LIMIT ? OFFSET ?";
+		String SQL = "SELECT * FROM pessoa_usuario WHERE UPPER(nome) LIKE UPPER(?) ORDER BY nome ASC LIMIT ? OFFSET ?";
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setString(1, "%" + nome + "%");

@@ -62,7 +62,7 @@ public class ValidadorCPF {
 	           if ((dig10 == CPF.charAt(9)) && (dig11 == CPF.charAt(10))) {
 	               return(true);
 		   } else {
-			   system.out.println(CPF);
+			   System.out.println(CPF);
 			   return(false);
 		   }
 	       } catch (InputMismatchException erro) {
