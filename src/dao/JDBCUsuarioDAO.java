@@ -83,10 +83,11 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 	public boolean autenticar(String login, String senha) {
 		super.open();
 		try {
-			String SQL = "SELECT * FROM pessoa_usuario as u WHERE u.login = ?";
+			String SQL = "SELECT * FROM pessoa_usuario as u WHERE u.login = ? OR u.email = ?";
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 
 			ps.setString(1, login);
+			ps.setString(2, login);
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {
