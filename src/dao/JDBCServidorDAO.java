@@ -291,7 +291,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 		super.open();
 		List<Servidor> servidores = new ArrayList<Servidor>();
 		try {
-			PreparedStatement ps = super.getConnection().prepareStatement("SELECT * FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) like UPPER(?) LIMIT ? OFFSET ?;");
+			PreparedStatement ps = super.getConnection().prepareStatement("SELECT * FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) like UPPER(?) ORDER BY nome ASC LIMIT ? OFFSET ?;");
 			ps.setString(1, "%"+nome+"%");
 			ps.setInt(2, fim - inicio);
 			ps.setInt(3, inicio);
@@ -328,7 +328,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 		super.open();
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement("SELECT COUNT(*) AS quantidade FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) LIKE UPPER(?);");
-			ps.setString(1, nome);
+			ps.setString(1, "%"+nome+"%");
 			ResultSet rs = ps.executeQuery();
 			Integer quantidade = null;
 			if (rs.next()) {

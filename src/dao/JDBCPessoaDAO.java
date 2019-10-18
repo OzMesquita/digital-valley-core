@@ -632,7 +632,7 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 	@Override
 	public Integer getQuantidadePorNome(String nome) {
 		super.open();
-		String SQL = "SELECT COUNT(*) AS quantidade FROM pessoa_usuario WHERE nome LIKE ?";
+		String SQL = "SELECT COUNT(*) AS quantidade FROM pessoa_usuario WHERE nome LIKE UPPER(?)";
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setString(1, "%" + nome + "%");
