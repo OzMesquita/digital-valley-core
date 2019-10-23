@@ -34,7 +34,7 @@ public class Professor extends Servidor{
 
     public void setDisciplinas(Disciplina disciplina) {
         if(disciplina==null)
-            throw new IllegalArgumentException("Disciplina inv√°lida");
+            throw new IllegalArgumentException("Erro: Disciplina inv·lida");
         this.disciplinas.add(disciplina);        
     }
     

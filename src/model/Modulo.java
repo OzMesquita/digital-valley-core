@@ -27,7 +27,7 @@ public class Modulo implements Serializable{
 		if(titulo != null && titulo.length() > 0){
 			this.titulo = titulo;
 		}else{
-			throw new IllegalArgumentException("Erro: O titulo n√£o pode ser nulo e deve ter pelo menos 1 caractere, valor informado: "+titulo);
+			throw new IllegalArgumentException("Erro: O titulo n„o pode ser nulo e deve ter pelo menos 1 caractere. Valor informado:: "+titulo);
 		}
 		
 	}
@@ -38,7 +38,7 @@ public class Modulo implements Serializable{
 		if(url != null && url.length() >0 ){
 			this.url = url;
 		}else{
-			throw new IllegalArgumentException("Erro: A url n√£o pode ser nula e deve ter pelo menos 1 caractere, valor informado: "+url);
+			throw new IllegalArgumentException("Erro: A url n„o pode ser nula e deve ter pelo menos 1 caractere. Valor informado:: "+url);
 		}
 		
 	}
@@ -49,7 +49,7 @@ public class Modulo implements Serializable{
 		if(imagem != null){
 		this.imagem = imagem;
 		}else{
-			throw new IllegalArgumentException("Erro: A imagem n√£o pode ser nula, valor informado: "+imagem);
+			throw new IllegalArgumentException("Erro: A imagem n„o pode ser nula. Valor informado:: "+imagem);
 		}
 	}
 	public int getId() {

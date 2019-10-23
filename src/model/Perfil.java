@@ -12,7 +12,7 @@ public class Perfil {
 		if(this.nome != null){
 			this.nome = nome;
 		}else{
-			throw new IllegalArgumentException("Erro: O par√¢metro nome n√£o pode ser nulo ou vazio, valor informado " + nome);
+			throw new IllegalArgumentException("Erro: O par‚metro nome n„o pode ser nulo ou vazio. Valor informado: " + nome);
 		}
 		
 	}
@@ -25,7 +25,7 @@ public class Perfil {
 		if(id >0){
 			this.id = id;
 		}else{
-			throw new IllegalArgumentException("Erro: O par√¢metro nome n√£o pode ser nulo ou menor que 1, valor informado " + id);
+			throw new IllegalArgumentException("Erro: O par‚metro nome n„o pode ser nulo ou menor que 1. Valor informado: " + id);
 		}
 	}
 

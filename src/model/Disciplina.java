@@ -32,7 +32,7 @@ public class Disciplina{
 	}
 	public void setProfessor(Professor professor) {
 		if(professor==null)
-			throw new IllegalArgumentException("Professor inv√°lido");
+			throw new IllegalArgumentException("Erro: Professor inv·lido");
 		this.professor = professor;
 	}
 	public Curso getCurso() {
@@ -40,7 +40,7 @@ public class Disciplina{
 	}
 	public void setCurso(Curso curso) {
 		if(curso==null)
-			throw new IllegalArgumentException("Curso inv√°lido");
+			throw new IllegalArgumentException("Erro: Curso inv·lido");
 		this.curso = curso;
 	}
 }
