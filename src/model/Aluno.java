@@ -27,7 +27,7 @@ public class Aluno extends Pessoa{
 		if(matricula != null && matricula.length() == 6 && matricula.matches("^[0-9]+$")){
 			this.matricula = matricula;
 		}else{
-			throw new IllegalArgumentException("Erro: O par√¢metro MATRICULA n√£o pode ser nulo e deve conter apenas d√≠gitos, valor informado " + matricula);
+			throw new IllegalArgumentException("Erro: O par‚metro MATRICULA n„o pode ser nulo e deve conter apenas dÌgitos. Valor informado: " + matricula);
 		}
 	}
 	
@@ -47,7 +47,7 @@ public class Aluno extends Pessoa{
 		if (semestreIngresso != null && semestreIngresso.matches("^[0-9]{4}.[1-2]$")){
 			this.semestreIngresso = semestreIngresso;
 		}else{
-			throw new IllegalArgumentException("Erro: O par√¢metro SEMESTRE INGRESSO deve seguir o modelo <ano>.<1 ou 2> Ex: 2017.1, valor informado " + semestreIngresso);
+			throw new IllegalArgumentException("Erro: O par‚metro SEMESTRE INGRESSO deve seguir o modelo <ano>.<1 ou 2> Ex: 2017.1. Valor informado: " + semestreIngresso);
 		}
 	}
 

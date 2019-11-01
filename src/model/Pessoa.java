@@ -1,7 +1,10 @@
 package model;
 
 import java.io.Serializable;
+import java.time.DateTimeException;
 import java.time.LocalDate;
+
+import util.Constantes;
 import util.ValidadorCPF;
 
 import model.Usuario;
@@ -38,7 +41,7 @@ public class Pessoa implements Serializable {
 		if (id > 0) {
 			this.id = id;
 		} else {
-			throw new IllegalArgumentException("Erro: O valor do id deve ser maior do que 0, valor informardo: " + id);
+			throw new IllegalArgumentException("Erro: O valor do id deve ser maior do que 0. Valor informardo: " + id);
 		}
 	}
 
@@ -59,7 +62,7 @@ public class Pessoa implements Serializable {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O Nome n√£o poder ser nulo e deve possuir pelo menos 1 caracteres, valor informado: " + nome);
+					"Erro: O Nome n„o poder ser nulo e deve possuir pelo menos 1 caracteres. Valor informado:: " + nome);
 		}
 
 	}
@@ -73,7 +76,7 @@ public class Pessoa implements Serializable {
 			this.cpf = cpf;
 		} else {
 			throw new IllegalArgumentException(
-					"O CPF informado n√£o √© v√°lido!");
+					"Erro: CPF informado n„o È v·lido. Valor informado:: "+ cpf);
 		}
 	}
 
@@ -85,7 +88,7 @@ public class Pessoa implements Serializable {
 		if (email.matches("^[aA-zZ][aA-zZ0-9_.\'-]*@[aA-zZ]+.[aA-zZ]*(.br)?$")) {
 			this.email = email;
 		} else {
-			throw new IllegalArgumentException("Erro: O par√¢metro e-mail inv√°lido, valor informado " + email);
+			throw new IllegalArgumentException("Erro: par‚metro e-mail inv·lido. Valor informado: " + email);
 		}
 	}
 
@@ -108,15 +111,21 @@ public class Pessoa implements Serializable {
 	public void setDataNascimento(String dataNascimento) {
 		String[] data = dataNascimento.split("/");
 		String[] dataSql = dataNascimento.split("-");
-		if (data.length == 3) {
-			this.setDataNascimento(
-					LocalDate.of(Integer.valueOf(data[2]), Integer.valueOf(data[1]), Integer.valueOf(data[0])));
-		}else if(dataSql.length == 3){
-			this.setDataNascimento(
-					LocalDate.of(Integer.valueOf(dataSql[0]), Integer.valueOf(dataSql[1]), Integer.valueOf(dataSql[2])));
-		}else {
-			throw new RuntimeException(
-					"Erro: A data de nascimento n√£o est√° no formato correto, valor informado " + dataNascimento);
+		try {
+			if (data.length == 3) {
+				this.setDataNascimento(
+						LocalDate.of(Integer.valueOf(data[2]), Integer.valueOf(data[1]), Integer.valueOf(data[0])));
+			}else if(dataSql.length == 3){
+				this.setDataNascimento(
+						LocalDate.of(Integer.valueOf(dataSql[0]), Integer.valueOf(dataSql[1]), Integer.valueOf(dataSql[2])));
+			}else {
+				throw new RuntimeException(
+						"Erro: A data de nascimento n„o est· no formato correto. Valor informado: " + dataNascimento);
+			}
+		}catch (DateTimeException e) { 
+			throw new DateTimeException(
+						"Erro: A data de nascimento n„o existe. Valor informado: " + dataNascimento);
+		
 		}
 	}
 }

@@ -45,7 +45,7 @@ public class Usuario implements Serializable {
 		if(login != null &&login.length() >= 4){
 			this.login = login;
 		}else{
-			throw new IllegalArgumentException("Erro: O valor do login n√£o pode ser nulo e deve possuir pelo menos 4 caracteres, valor informado: "+login);
+			throw new IllegalArgumentException("Erro: O valor do login n„o pode ser nulo e deve possuir pelo menos 4 caracteres. Valor informado:: "+login);
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class Usuario implements Serializable {
 		if(senha != null && senha.length() >= 6){
 			this.senha = senha;
 		}else{
-			throw new IllegalArgumentException("Erro: O valor da senha n√£o pode ser nulo e deve possuir pelo menos 6 caracteres, valor informado: "+senha);
+			throw new IllegalArgumentException("Erro: O valor da senha n„o pode ser nulo e deve possuir pelo menos 6 caracteres. Valor informado:: "+senha);
 		}
 	}
 	public EnumNivel getNivel() {
@@ -71,7 +71,7 @@ public class Usuario implements Serializable {
 		if(perfil != null) {
 			this.perfil = perfil;
 		}else {
-			throw new IllegalArgumentException("Erro: O valor do perfil n√£o pode ser nulo, valor informado: "+perfil);
+			throw new IllegalArgumentException("Erro: O valor do perfil n„o pode ser nulo. Valor informado:: "+perfil);
 		}
 	}
 	
@@ -90,7 +90,7 @@ public class Usuario implements Serializable {
 			this.perfil = EnumPerfil.VISITANTE;
 			break;
 		default:
-			throw new IllegalArgumentException("Erro: O valor do perfil n√£o pode ser nulo ou invalido, valor informado: "+perfil);
+			throw new IllegalArgumentException("Erro: O valor do perfil n„o pode ser nulo ou invalido. Valor informado:: "+perfil);
 			
 		}
 	}
@@ -110,7 +110,7 @@ public class Usuario implements Serializable {
 			this.nivel = EnumNivel.COMUM;
 			break;
 		default:
-			throw new IllegalArgumentException("Erro: O valor do nivel n√£o pode ser nulo ou invalido, valor informado: "+nivel);
+			throw new IllegalArgumentException("Erro: O valor do nivel n„o pode ser nulo ou invalido. Valor informado:: "+nivel);
 			
 		}
 	}
