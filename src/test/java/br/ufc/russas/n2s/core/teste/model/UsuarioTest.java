@@ -1,6 +1,9 @@
-package model;
+package teste.model;
 
 import org.junit.Test;
+
+import model.EnumPerfil;
+import model.Usuario;
 
 public class UsuarioTest {
 

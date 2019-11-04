@@ -1,4 +1,4 @@
-package dao;
+package teste.dao;
 
 import java.util.List;
 
@@ -6,12 +6,15 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import dao.DAOFactory;
+import dao.PerfilDAO;
 import model.Perfil;
 
 public class PerfilDAOTest {
 	
 	private Perfil perfil = new Perfil();
 	private PerfilDAO pDAO = DAOFactory.criarPerfilDAO();
+	
 	@Ignore
 	@Test
 	public void testCadastrar(){

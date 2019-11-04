@@ -1,7 +1,9 @@
-package model;
+package teste.model;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import model.Professor;
 
 public class ProfessorTest {
 	

@@ -1,4 +1,4 @@
-package util;
+package teste.util;
 import java.util.List;
 
 import org.junit.Ignore;
@@ -7,6 +7,7 @@ import model.Aluno;
 import model.EnumNivel;
 import model.Pessoa;
 import model.Usuario;
+import util.Crypter;
 
 public class FacadeTest {
 

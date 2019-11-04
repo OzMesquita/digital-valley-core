@@ -1,4 +1,4 @@
-package dao;
+package teste.dao;
 
 import java.util.List;
 
@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import dao.AlunoDAO;
+import dao.DAOFactory;
 import model.Aluno;
 import model.Curso;
 

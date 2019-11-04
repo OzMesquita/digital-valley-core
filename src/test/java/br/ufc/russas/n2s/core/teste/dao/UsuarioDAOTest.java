@@ -1,9 +1,10 @@
-package dao;
+package teste.dao;
 
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import dao.DAOFactory;
 import dao.UsuarioDAO;
 import model.EnumNivel;
 import model.EnumPerfil;

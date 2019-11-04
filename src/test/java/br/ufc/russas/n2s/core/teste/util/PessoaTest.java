@@ -1,12 +1,8 @@
-package util;
-import java.util.List;
+package teste.util;
 
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import model.Pessoa;
-
 
 public class PessoaTest {
 	

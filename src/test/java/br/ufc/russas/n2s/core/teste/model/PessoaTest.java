@@ -1,6 +1,8 @@
-package model;
+package teste.model;
 
 import org.junit.Test;
+
+import model.Pessoa;
 
 public class PessoaTest {
 

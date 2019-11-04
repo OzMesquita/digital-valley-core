@@ -1,4 +1,4 @@
-package dao;
+package teste.dao;
 
 import java.time.LocalDate;
 
@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import dao.DAOFactory;
 import dao.PessoaDAO;
 import model.Pessoa;
 import model.Usuario;
