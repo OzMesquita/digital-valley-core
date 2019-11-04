@@ -1,4 +1,4 @@
-package teste.dao;
+package br.ufc.russas.n2s.core.teste.dao;
 
 import java.time.LocalDate;
 
@@ -28,8 +28,8 @@ public class PessoaDAOTest {
 		PessoaDAO pd = DAOFactory.criarPessoaDAO();
 
 		pd.cadastrar(pessoa);
-
 	}
+
 	@Ignore
 	@Test
 	public void editar() {
@@ -40,7 +40,6 @@ public class PessoaDAOTest {
 		PessoaDAO pdao = DAOFactory.criarPessoaDAO();
 
 		pdao.editar(pessoa);
-
 	}
 
 	@Ignore
@@ -49,8 +48,8 @@ public class PessoaDAOTest {
 		pessoa.setId(6);
 		PessoaDAO pdao = DAOFactory.criarPessoaDAO();
 		pdao.remover(pessoa.getId());
-
 	}
+
 	@Ignore
 	@Test
 	public void buscar() {
@@ -58,7 +57,6 @@ public class PessoaDAOTest {
 		pessoa.setId(4);
 
 		Assert.assertTrue(pdao.buscarPorId(pessoa.getId()) != null);
-
 	}
 
 	@Ignore
@@ -70,61 +68,56 @@ public class PessoaDAOTest {
 		pessoa = pdao.buscarPorLogin("deyvison");
 
 		Assert.assertTrue(pessoa != null);
-		 System.out.println("Pessoa ID: "+ pessoa.getId());
-		 System.out.println("Pessoa Nome: "+ pessoa.getNome());
-		 System.out.println("Pessoa CPF: "+ pessoa.getCpf());
+		System.out.println("Pessoa ID: " + pessoa.getId());
+		System.out.println("Pessoa Nome: " + pessoa.getNome());
+		System.out.println("Pessoa CPF: " + pessoa.getCpf());
 		// System.out.println("Pessoa Login: "+ pessoa.getUsuario().getLogin());
 		// System.out.println("Pessoa Senha: "+ pessoa.getUsuario().getSenha());
 		//
-
 	}
 
-	
 	@Test
 	public void listar() {
 		PessoaDAO pd = DAOFactory.criarPessoaDAO();
 		List<Pessoa> pessoas = pd.listar();
-		for(Pessoa p: pessoas){
+		for (Pessoa p : pessoas) {
 			System.out.println(p.getNome());
 			System.out.println(p.getUsuario().getLogin());
 			System.out.println(p.getUsuario().getNivel());
 		}
 		Assert.assertTrue(pessoas != null);
 	}
+
 	@Ignore
 	@Test
-	public void testBuscarPorNome(){
+	public void testBuscarPorNome() {
 		PessoaDAO pDAO = DAOFactory.criarPessoaDAO();
 		List<Pessoa> pessoas = pDAO.buscarPorNome("tagila");
-		System.out.println("Listar alunos: "+pessoas.size());
-		for(Pessoa p: pessoas){
-			System.out.println("Nome "+p.getNome());
-			System.out.println("Login "+p.getUsuario().getLogin());
+		System.out.println("Listar alunos: " + pessoas.size());
+		for (Pessoa p : pessoas) {
+			System.out.println("Nome " + p.getNome());
+			System.out.println("Login " + p.getUsuario().getLogin());
 		}
 		Assert.assertTrue(pessoas != null);
 	}
-	
+
 	@Test
-	public void testInserirToken(){
+	public void testInserirToken() {
 		Pessoa p = new Pessoa();
 		p.setNome("Deyvison");
 		p.setId(2);
 		PessoaDAO pDAO = DAOFactory.criarPessoaDAO();
 		pDAO.inserirTokenRecuperacao(p);
-		
 	}
-	
+
 	@Test
-	public void testBuscarToken(){
+	public void testBuscarToken() {
 		PessoaDAO pDAO = DAOFactory.criarPessoaDAO();
 		pessoa = pDAO.buscarPorId(2);
 		pDAO = DAOFactory.criarPessoaDAO();
 		String token = pDAO.buscarTokenRecuperacao(pessoa);
-		
-		System.out.println("token é: "+token);
-		
+
+		System.out.println("token é: " + token);
 	}
-	
-	
 
 }

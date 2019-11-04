@@ -1,4 +1,5 @@
-package teste.util;
+package br.ufc.russas.n2s.core.teste.util;
+
 import java.util.List;
 
 import org.junit.Ignore;
@@ -28,10 +29,7 @@ public class FacadeTest {
 		usuario.setPessoa(pessoa);
 
 		util.Facade.cadastrarPessoa(pessoa, usuario);
-
 	}
-
-	
 
 	@Ignore
 	@Test
@@ -44,8 +42,6 @@ public class FacadeTest {
 		}
 	}
 
-
-
 	@Ignore
 	@Test
 	public void testLerEmail() {
@@ -53,24 +49,21 @@ public class FacadeTest {
 		System.out.println(email[0]);
 		System.out.println(email[1]);
 	}
+
 	@Ignore
 	@Test
 	public void testdigito() {
 		String matricula = "123s56";
-		if(matricula.matches("^[0-9]+$")) {
+		if (matricula.matches("^[0-9]+$")) {
 			System.out.println("Só numeros");
-		}else {
+		} else {
 			System.out.println("tem letras");
 		}
 	}
-	
-	
+
 	@Test
 	public void crypter() {
 		System.out.println(Crypter.crypt("deyvison123"));
 	}
-
-
-	
 
 }

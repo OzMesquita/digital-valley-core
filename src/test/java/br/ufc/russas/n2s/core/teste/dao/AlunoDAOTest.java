@@ -1,4 +1,4 @@
-package teste.dao;
+package br.ufc.russas.n2s.core.teste.dao;
 
 import java.util.List;
 
@@ -39,34 +39,33 @@ public class AlunoDAOTest {
 		Assert.assertTrue(adao.buscar(aluno.getId()) != null);
 		aluno = adao.buscar(4);
 		System.out.println(aluno.getNome());
-
 	}
-	
 
 	@Test
-	public void testBuscarPorMatricula(){
+	public void testBuscarPorMatricula() {
 		AlunoDAO aDAO = DAOFactory.criarAlunoDAO();
 		aluno = aDAO.buscarPorMatricula("123454");
 		Assert.assertTrue(aluno != null);
-		System.out.println("Nome: "+aluno.getNome());
-		System.out.println("Matricula: "+aluno.getMatricula());
+		System.out.println("Nome: " + aluno.getNome());
+		System.out.println("Matricula: " + aluno.getMatricula());
 		System.out.println(aluno.getUsuario().getPessoa().getNome());
 	}
-	
+
 	@Ignore
 	@Test
 	public void listar() {
 		AlunoDAO aDAO = DAOFactory.criarAlunoDAO();
 		List<Aluno> alunos = aDAO.listar();
-		
-		System.out.println("Listar alunos: "+alunos.size());
-		for(Aluno a: alunos){
-			System.out.println("curso "+a.getCurso().getNome());
-			System.out.println("Matricula "+a.getMatricula());
-			System.out.println("Nome "+a.getNome());
+
+		System.out.println("Listar alunos: " + alunos.size());
+		for (Aluno a : alunos) {
+			System.out.println("curso " + a.getCurso().getNome());
+			System.out.println("Matricula " + a.getMatricula());
+			System.out.println("Nome " + a.getNome());
 		}
 		Assert.assertTrue(alunos != null);
 	}
+
 	@Ignore
 	@Test
 	public void editar() {
@@ -80,24 +79,21 @@ public class AlunoDAOTest {
 
 		AlunoDAO aDAO = DAOFactory.criarAlunoDAO();
 		aDAO.editar(aluno);
-
 	}
-	
-	
+
 	@Ignore
 	@Test
-	public void testBuscarNome(){
+	public void testBuscarNome() {
 		AlunoDAO aDAO = DAOFactory.criarAlunoDAO();
 		List<Aluno> alunos = aDAO.buscarPorNome("danmwlkdnawld");
-		
-		System.out.println("Listar alunos: "+alunos.size());
-		for(Aluno a: alunos){
-			System.out.println("curso "+a.getCurso().getNome());
-			System.out.println("Matricula "+a.getMatricula());
-			System.out.println("Nome "+a.getNome());
+
+		System.out.println("Listar alunos: " + alunos.size());
+		for (Aluno a : alunos) {
+			System.out.println("curso " + a.getCurso().getNome());
+			System.out.println("Matricula " + a.getMatricula());
+			System.out.println("Nome " + a.getNome());
 		}
 		Assert.assertTrue(alunos != null);
 	}
-
 
 }
