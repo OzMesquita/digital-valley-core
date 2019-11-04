@@ -89,7 +89,7 @@ public class Pessoa implements Serializable {
 		if (email.matches("^[aA-zZ][aA-zZ0-9_.\'-]*@[aA-zZ]+.[aA-zZ]*(.br)?$")) {
 			this.email = email;
 		} else {
-			throw new IllegalArgumentException("Erro: parâmetro e-mail inválido. Valor informado: " + email);
+			throw new IllegalArgumentException("Erro: e-mail inválido. Valor informado: " + email);
 		}
 	}
 
