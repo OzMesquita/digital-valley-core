@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import util.Constantes;
 import util.ValidadorCPF;
@@ -105,6 +106,16 @@ public class Pessoa implements Serializable {
 	}
 
 	public void setDataNascimento(LocalDate dataNascimento) {
+		LocalDate localDate = LocalDate.now();
+		if(dataNascimento.isAfter(localDate))
+			throw new RuntimeException(
+					"Erro: A data de nascimento está no futuro. Valor informado: " + dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
+		
+		LocalDate manyYearAgo = LocalDate.of(1900, 1, 1);
+		if(dataNascimento.isBefore(manyYearAgo))
+			throw new RuntimeException(
+					"Erro: O sistema não reconhece datas anteriores ao ano de 1900. Valor informado: " + dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/YYYY"))); 
+		
 		this.dataNascimento = dataNascimento;
 	}
 
@@ -118,7 +129,8 @@ public class Pessoa implements Serializable {
 			}else if(dataSql.length == 3){
 				this.setDataNascimento(
 						LocalDate.of(Integer.valueOf(dataSql[0]), Integer.valueOf(dataSql[1]), Integer.valueOf(dataSql[2])));
-			}else {
+			}else{
+			
 				throw new RuntimeException(
 						"Erro: A data de nascimento não está no formato correto. Valor informado: " + dataNascimento);
 			}
