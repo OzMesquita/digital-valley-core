@@ -16,6 +16,7 @@ public class Constantes {
 	private static String USER_PROFILE_IMAGES_DIR;
 	private static String USER_PROFILE_NONE_IMAGE_DIR;
 	private static String APP_IMG_USER_DIR;
+
 	private Constantes() {
 		//
 	}
@@ -28,13 +29,13 @@ public class Constantes {
 		APP_ASSETS_URL = APP_URL + "/assets2";
 		APP_JS_URL = APP_ASSETS_URL + "/js";
 		APP_IMG_URL = APP_ASSETS_URL + "/img";
-		//APP_IMG_USER_DIR ="C:\\n2s\\img\\";
+		// APP_IMG_USER_DIR ="C:\\n2s\\img\\";
 		APP_CSS_URL = APP_ASSETS_URL + "/css";
 		NUMBER_OF_ROWS_PER_PAGE = 20;
 		SESSION_MSG = "msg";
 		MODULES_IMAGES_DIR = "C:\\imagens\\modulo";
 		USER_PROFILE_IMAGES_DIR = "C:\\n2s\\img\\";
-		USER_PROFILE_NONE_IMAGE_DIR =  USER_PROFILE_IMAGES_DIR + "none.png";
+		USER_PROFILE_NONE_IMAGE_DIR = USER_PROFILE_IMAGES_DIR + "none.png";
 	}
 
 	/**
@@ -115,8 +116,7 @@ public class Constantes {
 	}
 
 	/**
-	 * @param mODULES_IMAGES_DIR
-	 *            the mODULES_IMAGES_DIR to set
+	 * @param mODULES_IMAGES_DIR the mODULES_IMAGES_DIR to set
 	 */
 	public static void setMODULES_IMAGES_DIR(String mODULES_IMAGES_DIR) {
 		MODULES_IMAGES_DIR = mODULES_IMAGES_DIR;
@@ -130,8 +130,7 @@ public class Constantes {
 	}
 
 	/**
-	 * @param uSER_PROFILE_IMAGES_DIR
-	 *            the uSER_PROFILE_IMAGES_DIR to set
+	 * @param uSER_PROFILE_IMAGES_DIR the uSER_PROFILE_IMAGES_DIR to set
 	 */
 	public static void setUSER_PROFILE_IMAGES_DIR(String uSER_PROFILE_IMAGES_DIR) {
 		USER_PROFILE_IMAGES_DIR = uSER_PROFILE_IMAGES_DIR;
@@ -145,8 +144,7 @@ public class Constantes {
 	}
 
 	/**
-	 * @param uSER_PROFILE_NONE_IMAGE_DIR
-	 *            the uSER_PROFILE_NONE_IMAGE_DIR to set
+	 * @param uSER_PROFILE_NONE_IMAGE_DIR the uSER_PROFILE_NONE_IMAGE_DIR to set
 	 */
 	public static void setUSER_PROFILE_NONE_IMAGE_DIR(String uSER_PROFILE_NONE_IMAGE_DIR) {
 		USER_PROFILE_NONE_IMAGE_DIR = uSER_PROFILE_NONE_IMAGE_DIR;

@@ -1,6 +1,5 @@
 package dao;
 
-
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,16 +12,15 @@ import model.Curso;
 import model.Usuario;
 
 public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
-	
 
 	protected JDBCAlunoDAO() {
-	
+
 	}
 
 	@Override
 	public void cadastrar(Aluno aluno) {
 		super.open();
-		
+
 		try {
 
 			String SQL = "INSERT INTO aluno (matricula, id_curso, semestre_ingresso, id_pessoa_usuario) VALUES"
@@ -39,13 +37,11 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar um aluno:"+ e.getMessage());
-		}finally {
+			throw new RuntimeException("Falha ao cadastrar um aluno:" + e.getMessage());
+		} finally {
 			super.close();
 		}
 	}
-	
-	
 
 	@Override
 	public Aluno buscar(int id) {
@@ -58,11 +54,11 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()){
+			if (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = DAOFactory.criarCursoDAO().buscar(rs.getInt("id_curso"));
 				Usuario usuario = new Usuario();
-				
+
 				usuario.setLogin(rs.getString("login"));
 				usuario.setSenha(rs.getString("senha"));
 				usuario.setNivel(rs.getInt("nivel"));
@@ -79,21 +75,21 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 				usuario.setPessoa(aluno);
 				rs.close();
 				ps.close();
-				
+
 				return aluno;
-				
-			}else{
+
+			} else {
 				return null;
 			}
-
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Erro ao buscar registro de aluno", e);
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
+
 	@Override
 	public Aluno buscarPorMatricula(String matricula) {
 		super.open();
@@ -105,7 +101,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()){
+			if (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = new Curso();
 				Usuario usuario = new Usuario();
@@ -125,38 +121,38 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				aluno.setEmail(rs.getString("email"));
-				
-				usuario.setPessoa(aluno);		
-				
+
+				usuario.setPessoa(aluno);
+
 				rs.close();
 				ps.close();
-				
+
 				return aluno;
-				
-			}else{
+
+			} else {
 				return null;
 			}
-
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Erro ao buscar registro de aluno", e);
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
+
 	@Override
-	public List<Aluno> buscarPorNome(String nome){
+	public List<Aluno> buscarPorNome(String nome) {
 		super.open();
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
 		try {
 			String SQL = "SELECT * FROM aluno AS u_a, pessoa_usuario AS u, curso AS c WHERE u_a.id_pessoa_usuario = u.id_pessoa_usuario AND u_a.id_curso = c.id_curso AND  UPPER(u.nome) like UPPER(?)";
-			
+
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
-			ps.setString(1, '%'+nome+'%');
+			ps.setString(1, '%' + nome + '%');
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = new Curso();
@@ -176,7 +172,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				aluno.setEmail(rs.getString("email"));
-				
+
 				alunos.add(aluno);
 			}
 			rs.close();
@@ -187,11 +183,10 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
 
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
-	
 
 	@Override
 	public List<Aluno> listar() {
@@ -200,10 +195,10 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		try {
 			String SQL = "SELECT * FROM aluno AS u_a, pessoa_usuario AS u, curso AS c WHERE u_a.id_pessoa_usuario = u.id_pessoa_usuario AND u_a.id_curso = c.id_curso";
-			
+
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = new Curso();
@@ -223,7 +218,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				aluno.setEmail(rs.getString("email"));
-				
+
 				alunos.add(aluno);
 			}
 			rs.close();
@@ -234,7 +229,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
 
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
@@ -250,21 +245,21 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			ps.setString(2, aluno.getMatricula());
 			ps.setInt(3, aluno.getCurso().getId());
 			ps.setInt(4, aluno.getId());
-			
+
 			ps.executeUpdate();
 			ps.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Erro ao editar registro de aluno", e);
-		}finally {
+		} finally {
 			super.close();
 		}
 
 	}
 
 	@Override
-	public Aluno buscarTokenRecuperacao(String token){
+	public Aluno buscarTokenRecuperacao(String token) {
 		super.open();
 
 		try {
@@ -272,35 +267,34 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 			ps.setString(1, token);
-			ps.setDate(2, Date.valueOf (LocalDate.now()));
+			ps.setDate(2, Date.valueOf(LocalDate.now()));
 
 			ResultSet rs = ps.executeQuery();
 
-			if(rs.next()){
+			if (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = new Curso();
 				Usuario usuario = new Usuario();
-				curso.setId(rs.getInt("id_curso"));	
+				curso.setId(rs.getInt("id_curso"));
 				usuario.setLogin(rs.getString("login"));
 				usuario.setSenha(rs.getString("senha"));
 				usuario.setNivel(rs.getInt("nivel"));
 				usuario.setPerfil(rs.getInt("perfil"));
-				aluno.setUsuario(usuario);			
-				
+				aluno.setUsuario(usuario);
+
 				rs.close();
 				ps.close();
-				
+
 				return aluno;
-				
-			}else{
+
+			} else {
 				return null;
 			}
-
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Erro ao buscar registro de aluno", e);
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
@@ -312,13 +306,13 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		try {
 			String SQL = "SELECT * FROM aluno AS u_a, pessoa_usuario AS u, curso AS c WHERE u_a.id_pessoa_usuario = u.id_pessoa_usuario AND u_a.id_curso = c.id_curso AND  UPPER(u.nome) like UPPER(?) LIMIT ? OFFSET ?";
-			
+
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
-			ps.setString(1, '%'+nome+'%');
+			ps.setString(1, '%' + nome + '%');
 			ps.setInt(2, fim - inicio);
 			ps.setInt(3, inicio);
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				Aluno aluno = new Aluno();
 				Curso curso = new Curso();
@@ -338,7 +332,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 				aluno.setCpf(rs.getString("cpf"));
 				aluno.setDataNascimento(LocalDate.parse(rs.getString("data_nascimento")));
 				aluno.setEmail(rs.getString("email"));
-				
+
 				alunos.add(aluno);
 			}
 			rs.close();
@@ -349,7 +343,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
 
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
@@ -358,14 +352,14 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 	public Integer getQuantidadePorNome(String nome) {
 		super.open();
 		try {
-			String SQL = "SELECT COUNT(*) AS quantidade FROM aluno AS u_a, pessoa_usuario AS u, curso AS c WHERE u_a.id_pessoa_usuario = u.id_pessoa_usuario AND u_a.id_curso = c.id_curso AND  UPPER(u.nome) like UPPER(?)";			
+			String SQL = "SELECT COUNT(*) AS quantidade FROM aluno AS u_a, pessoa_usuario AS u, curso AS c WHERE u_a.id_pessoa_usuario = u.id_pessoa_usuario AND u_a.id_curso = c.id_curso AND  UPPER(u.nome) like UPPER(?)";
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
-			ps.setString(1, '%'+nome+'%');
+			ps.setString(1, '%' + nome + '%');
 			ResultSet rs = ps.executeQuery();
 			Integer quantidade = null;
-			if (rs.next()) {				
-				quantidade = rs.getInt("quantidade");								
-			}else {
+			if (rs.next()) {
+				quantidade = rs.getInt("quantidade");
+			} else {
 				quantidade = 0;
 			}
 			rs.close();
@@ -374,10 +368,9 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
-		}finally {
+		} finally {
 			super.close();
 		}
 	}
-	
-	
+
 }

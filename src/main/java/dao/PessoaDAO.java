@@ -22,23 +22,23 @@ public interface PessoaDAO {
 	public List<Pessoa> buscarPorNome(String nome);
 
 	public List<Pessoa> listar();
-	
+
 	public List<Pessoa> buscarPorNivel(int nivel, int inicio, int fim);
-	
+
 	public List<Pessoa> buscarPorNomeENivel(String nome, int nivel, int inicio, int fim);
-	
+
 	public Integer getQuantidadePorNomeENivel(String nome, int nivel);
 
-    public Pessoa buscarPorEmail(String email);
-	
+	public Pessoa buscarPorEmail(String email);
+
 	public Integer getQuantidadePorNivel(int nivel);
 
 	public Pessoa buscarPorMatriculaAndCPF(String matricula, String cpf);
-	
+
 	public Usuario buscarPorSiapeAndCPF(String siape, String cpf);
-	
+
 	public String buscarTokenRecuperacao(Pessoa pessoa);
-	
+
 	public void inserirTokenRecuperacao(Pessoa pessoa);
 
 	public List<Pessoa> buscarPorNome(String nome, int inicio, int fim);

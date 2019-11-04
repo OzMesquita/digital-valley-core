@@ -3,40 +3,40 @@ package model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Professor extends Servidor{
+public class Professor extends Servidor {
 
 	private static final long serialVersionUID = 1L;
 	private boolean coordenador;
-	private ArrayList<Disciplina>disciplinas;
+	private ArrayList<Disciplina> disciplinas;
 
-    public Professor(){
-        super();
-        this.disciplinas = new ArrayList<Disciplina>();
-    }
-    
-    public Professor(String nome, String cpf, String email, Usuario usuario, LocalDate dataNascimento,String siape, boolean coordenador){
-        super(nome,cpf,email,usuario,dataNascimento,siape);
-        this.coordenador=coordenador;
-        this.cargo = EnumCargo.PROFESSOR;
-    }
+	public Professor() {
+		super();
+		this.disciplinas = new ArrayList<Disciplina>();
+	}
 
-    public boolean isCoordenador() {
-        return coordenador;
-    }
+	public Professor(String nome, String cpf, String email, Usuario usuario, LocalDate dataNascimento, String siape,
+			boolean coordenador) {
+		super(nome, cpf, email, usuario, dataNascimento, siape);
+		this.coordenador = coordenador;
+		this.cargo = EnumCargo.PROFESSOR;
+	}
 
-    public void setCoordenador(boolean coordenador) {
-        this.coordenador = coordenador;
-    }
+	public boolean isCoordenador() {
+		return coordenador;
+	}
 
-    public ArrayList<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
+	public void setCoordenador(boolean coordenador) {
+		this.coordenador = coordenador;
+	}
 
-    public void setDisciplinas(Disciplina disciplina) {
-        if(disciplina==null)
-            throw new IllegalArgumentException("Erro: Disciplina inválida");
-        this.disciplinas.add(disciplina);        
-    }
-    
+	public ArrayList<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(Disciplina disciplina) {
+		if (disciplina == null)
+			throw new IllegalArgumentException("Erro: Disciplina invï¿½lida");
+		this.disciplinas.add(disciplina);
+	}
 
 }

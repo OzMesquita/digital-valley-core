@@ -1,6 +1,5 @@
 package dao;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,20 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Perfil;
 
+public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO {
 
-public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
-	
-	
-	
-	protected JDBCPerfilDAO(){
+	protected JDBCPerfilDAO() {
 
 	}
 
 	@Override
 	public void cadastrar(Perfil perfil) {
-		
+
 		super.open();
-		
+
 		try {
 			String SQL = "INSERT INTO perfil(nome) VALUES (?)";
 
@@ -34,8 +30,8 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: "+e.getMessage());
-		}finally {
+			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: " + e.getMessage());
+		} finally {
 			super.close();
 
 		}
@@ -58,8 +54,8 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: "+e.getMessage());
-		}finally {
+			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: " + e.getMessage());
+		} finally {
 			super.close();
 		}
 
@@ -80,7 +76,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao remover registro de pessoas em JDBC pessoaDAO", e);
 
-		}finally {
+		} finally {
 			super.close();
 		}
 
@@ -90,7 +86,6 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 	public Perfil buscarPorId(int id) {
 
 		super.open();
-
 
 		Perfil perfil = new Perfil();
 		String SQL = "SELECT * FROM perfil WHERE id = ?";
@@ -116,14 +111,14 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 
-			throw new RuntimeException("Erro ao buscar registro do perfil: "+e.getMessage());
-		}finally {
+			throw new RuntimeException("Erro ao buscar registro do perfil: " + e.getMessage());
+		} finally {
 			super.close();
 		}
 	}
 
 	@Override
-	public Perfil buscarPorNome(String nome){
+	public Perfil buscarPorNome(String nome) {
 		super.open();
 
 		Perfil perfil = new Perfil();
@@ -131,7 +126,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 		try {
 
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
-			ps.setString(1, '%'+nome+'%');
+			ps.setString(1, '%' + nome + '%');
 
 			ResultSet rs = ps.executeQuery();
 
@@ -150,8 +145,8 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 
-			throw new RuntimeException("Erro ao buscar registro do perfil: "+e.getMessage());
-		}finally {
+			throw new RuntimeException("Erro ao buscar registro do perfil: " + e.getMessage());
+		} finally {
 			super.close();
 		}
 	}
@@ -182,8 +177,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 			e.printStackTrace();
 			throw new RuntimeException("Falha ao listar pessoas em JDBC perfilDAO, erro: " + e.getMessage());
 
-
-		}finally {
+		} finally {
 			super.close();
 		}
 	}

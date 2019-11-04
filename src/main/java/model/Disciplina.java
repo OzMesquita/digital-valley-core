@@ -1,18 +1,16 @@
 package model;
 
-public class Disciplina{	
-	
+public class Disciplina {
+
 	private int id;
 	private Professor professor;
 	private Curso curso;
 	private String nome;
-	
 
-	public Disciplina(){
-		
+	public Disciplina() {
+
 	}
-	
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -20,27 +18,32 @@ public class Disciplina{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public Professor getProfessor() {
 		return professor;
 	}
+
 	public void setProfessor(Professor professor) {
-		if(professor==null)
-			throw new IllegalArgumentException("Erro: Professor inválido");
+		if (professor == null)
+			throw new IllegalArgumentException("Erro: Professor invï¿½lido");
 		this.professor = professor;
 	}
+
 	public Curso getCurso() {
 		return curso;
 	}
+
 	public void setCurso(Curso curso) {
-		if(curso==null)
-			throw new IllegalArgumentException("Erro: Curso inválido");
+		if (curso == null)
+			throw new IllegalArgumentException("Erro: Curso invï¿½lido");
 		this.curso = curso;
 	}
 }

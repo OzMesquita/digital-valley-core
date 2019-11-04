@@ -4,10 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public abstract class JDBCDAO {
-	
+
 	private Connection connection;
-	
-	
 
 	public Connection getConnection() {
 		return connection;
@@ -20,7 +18,7 @@ public abstract class JDBCDAO {
 	protected void open() {
 		this.connection = dao.JDBCConnectionFactory.getConnection();
 	}
-	
+
 	protected void close() {
 		try {
 			getConnection().close();
@@ -28,6 +26,5 @@ public abstract class JDBCDAO {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 }

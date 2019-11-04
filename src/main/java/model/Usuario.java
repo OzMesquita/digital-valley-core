@@ -2,12 +2,10 @@ package model;
 
 import java.io.Serializable;
 
-import util.Crypter;
-
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private String login;
 	private String senha;
 	private Pessoa pessoa;
@@ -19,9 +17,11 @@ public class Usuario implements Serializable {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	public Usuario(){
-		
+
+	public Usuario() {
+
 	}
+
 	public Usuario(String login, String senha, Pessoa pessoa) {
 		super();
 		this.login = login;
@@ -29,6 +29,7 @@ public class Usuario implements Serializable {
 		this.nivel = EnumNivel.COMUM;
 		this.pessoa = pessoa;
 	}
+
 	public Usuario(String login, String senha) {
 		super();
 		this.login = login;
@@ -36,97 +37,108 @@ public class Usuario implements Serializable {
 		this.nivel = EnumNivel.COMUM;
 		this.perfil = EnumPerfil.VISITANTE;
 	}
-	
+
 	public String getLogin() {
 		return login;
 	}
 
 	public void setLogin(String login) {
-		if(login != null &&login.length() >= 4){
+		if (login != null && login.length() >= 4) {
 			this.login = login;
-		}else{
-			throw new IllegalArgumentException("Erro: O valor do login não pode ser nulo e deve possuir pelo menos 4 caracteres. Valor informado:: "+login);
+		} else {
+			throw new IllegalArgumentException(
+					"Erro: O valor do login nï¿½o pode ser nulo e deve possuir pelo menos 4 caracteres. Valor informado:: "
+							+ login);
 		}
 	}
-	
+
 	public String getSenha() {
 		return senha;
 	}
 
 	public void setSenha(String senha) {
-		if(senha != null && senha.length() >= 6){
+		if (senha != null && senha.length() >= 6) {
 			this.senha = senha;
-		}else{
-			throw new IllegalArgumentException("Erro: O valor da senha não pode ser nulo e deve possuir pelo menos 6 caracteres. Valor informado:: "+senha);
+		} else {
+			throw new IllegalArgumentException(
+					"Erro: O valor da senha nï¿½o pode ser nulo e deve possuir pelo menos 6 caracteres. Valor informado:: "
+							+ senha);
 		}
 	}
+
 	public EnumNivel getNivel() {
 		return nivel;
 	}
-	
+
 	public EnumPerfil getPerfil() {
 		return perfil;
 	}
+
 	public void setPerfil(EnumPerfil perfil) {
-		if(perfil != null) {
+		if (perfil != null) {
 			this.perfil = perfil;
-		}else {
-			throw new IllegalArgumentException("Erro: O valor do perfil não pode ser nulo. Valor informado:: "+perfil);
+		} else {
+			throw new IllegalArgumentException(
+					"Erro: O valor do perfil nï¿½o pode ser nulo. Valor informado:: " + perfil);
 		}
 	}
-	
+
 	public void setPerfil(int perfil) {
 		switch (perfil) {
 		case 1:
-			this.perfil = EnumPerfil.ADMINISTRADOR; 
+			this.perfil = EnumPerfil.ADMINISTRADOR;
 			break;
 		case 2:
 			this.perfil = EnumPerfil.ALUNO;
 			break;
 		case 3:
 			this.perfil = EnumPerfil.SERVIDOR;
-			break;	
+			break;
 		case 4:
 			this.perfil = EnumPerfil.VISITANTE;
 			break;
 		default:
-			throw new IllegalArgumentException("Erro: O valor do perfil não pode ser nulo ou invalido. Valor informado:: "+perfil);
-			
+			throw new IllegalArgumentException(
+					"Erro: O valor do perfil nï¿½o pode ser nulo ou invalido. Valor informado:: " + perfil);
+
 		}
 	}
-	
-	
-	
+
 	public void setNivel(EnumNivel nivel) {
 		this.nivel = nivel;
 	}
-	
-	public void setNivel(int nivel){
+
+	public void setNivel(int nivel) {
 		switch (nivel) {
 		case 1:
-			this.nivel = EnumNivel.ADMINISTRADOR; 
+			this.nivel = EnumNivel.ADMINISTRADOR;
 			break;
 		case 2:
 			this.nivel = EnumNivel.COMUM;
 			break;
 		default:
-			throw new IllegalArgumentException("Erro: O valor do nivel não pode ser nulo ou invalido. Valor informado:: "+nivel);
-			
+			throw new IllegalArgumentException(
+					"Erro: O valor do nivel nï¿½o pode ser nulo ou invalido. Valor informado:: " + nivel);
+
 		}
 	}
-	
+
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
+
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
+
 	public String getToken() {
 		return token;
 	}
+
 	public String getTokenUsuario() {
 		return tokenUsuario;
 	}
+
 	public void setTokenUsuario(String tokenUsuario) {
 		this.tokenUsuario = tokenUsuario;
 	}

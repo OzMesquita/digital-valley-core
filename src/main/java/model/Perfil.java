@@ -9,12 +9,13 @@ public class Perfil {
 	}
 
 	public void setNome(String nome) {
-		if(this.nome != null){
+		if (this.nome != null) {
 			this.nome = nome;
-		}else{
-			throw new IllegalArgumentException("Erro: O parâmetro nome não pode ser nulo ou vazio. Valor informado: " + nome);
+		} else {
+			throw new IllegalArgumentException(
+					"Erro: O parï¿½metro nome nï¿½o pode ser nulo ou vazio. Valor informado: " + nome);
 		}
-		
+
 	}
 
 	public int getId() {
@@ -22,10 +23,11 @@ public class Perfil {
 	}
 
 	public void setId(int id) {
-		if(id >0){
+		if (id > 0) {
 			this.id = id;
-		}else{
-			throw new IllegalArgumentException("Erro: O parâmetro nome não pode ser nulo ou menor que 1. Valor informado: " + id);
+		} else {
+			throw new IllegalArgumentException(
+					"Erro: O parï¿½metro nome nï¿½o pode ser nulo ou menor que 1. Valor informado: " + id);
 		}
 	}
 
@@ -33,11 +35,10 @@ public class Perfil {
 		super();
 		this.nome = "";
 	}
-	
+
 	public Perfil(String nome) {
 		super();
 		this.nome = nome;
 	}
-	
-	
+
 }

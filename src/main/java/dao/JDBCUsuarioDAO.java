@@ -78,7 +78,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 		}
 
 	}
-	
+
 	@Override
 	public boolean autenticar(String login, String senha) {
 		super.open();
@@ -163,7 +163,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			super.close();
 		}
 	}
-	
+
 	@Override
 	public String buscarToken(int id_pessoa) {
 		super.open();

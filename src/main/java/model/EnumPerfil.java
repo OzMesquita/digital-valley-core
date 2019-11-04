@@ -12,8 +12,8 @@ public enum EnumPerfil {
 	public int getValorPerfil() {
 		return valorPerfil;
 	}
-	
-	public static EnumPerfil getByString(String value){
+
+	public static EnumPerfil getByString(String value) {
 		switch (value.toUpperCase()) {
 		case "ADMINISTRADOR":
 			return EnumPerfil.ADMINISTRADOR;
@@ -26,13 +26,12 @@ public enum EnumPerfil {
 
 		default:
 			return null;
-			
+
 		}
 	}
-	
-	
-	public static String value(Integer valor){
-		switch(valor){
+
+	public static String value(Integer valor) {
+		switch (valor) {
 		case 1:
 			return "Administrador";
 		case 2:
@@ -45,22 +44,21 @@ public enum EnumPerfil {
 			return "";
 		}
 	}
-		
-		public static EnumPerfil EnumByValue(Integer valor){
-			switch(valor){
-			case 1:
-				return EnumPerfil.ADMINISTRADOR;
-			case 2:
-				return EnumPerfil.ALUNO;
-			case 3:
-				return EnumPerfil.SERVIDOR;
-			case 4:
-				return EnumPerfil.VISITANTE;
-			default:
-				return null;
-			}
-	
+
+	public static EnumPerfil EnumByValue(Integer valor) {
+		switch (valor) {
+		case 1:
+			return EnumPerfil.ADMINISTRADOR;
+		case 2:
+			return EnumPerfil.ALUNO;
+		case 3:
+			return EnumPerfil.SERVIDOR;
+		case 4:
+			return EnumPerfil.VISITANTE;
+		default:
+			return null;
+		}
+
 	}
-	
 
 }

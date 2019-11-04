@@ -1,37 +1,37 @@
 package dao;
 
 public class DAOFactory {
-	
+
 	private DAOFactory() {
 		//
 	}
-	
-	public static PessoaDAO criarPessoaDAO(){
+
+	public static PessoaDAO criarPessoaDAO() {
 		return new JDBCPessoaDAO();
-	}	
-	
-	public static UsuarioDAO criarUsuarioDAO(){
+	}
+
+	public static UsuarioDAO criarUsuarioDAO() {
 		return new JDBCUsuarioDAO();
 	}
-	
-	public static AlunoDAO criarAlunoDAO(){
+
+	public static AlunoDAO criarAlunoDAO() {
 		return new JDBCAlunoDAO();
 	}
-	
-	public static ServidorDAO criarServidorDAO(){
+
+	public static ServidorDAO criarServidorDAO() {
 		return new JDBCServidorDAO();
 	}
-	
-	public static ProfessorDAO criarProfessorDAO(){
+
+	public static ProfessorDAO criarProfessorDAO() {
 		return new JDBCProfessorDAO();
 	}
-	
-	public static PerfilDAO criarPerfilDAO(){
+
+	public static PerfilDAO criarPerfilDAO() {
 		return new JDBCPerfilDAO();
 	}
-	
-	public static JDBCCursoDAO criarCursoDAO(){
+
+	public static JDBCCursoDAO criarCursoDAO() {
 		return new JDBCCursoDAO();
 	}
-	
+
 }

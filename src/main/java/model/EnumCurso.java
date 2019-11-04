@@ -2,7 +2,8 @@ package model;
 
 public enum EnumCurso {
 
-	CIENCIADACOMPUTACAO(1), ENGENHARIACIVIL(2), ENGENHARIADEPRODUCAO(3), ENGENHARIADESOFTWARE(4), ENGENHARIAMECANINCA(5);
+	CIENCIADACOMPUTACAO(1), ENGENHARIACIVIL(2), ENGENHARIADEPRODUCAO(3), ENGENHARIADESOFTWARE(4),
+	ENGENHARIAMECANINCA(5);
 
 	public int valorCurso;
 
@@ -13,10 +14,9 @@ public enum EnumCurso {
 	public int getValorCurso() {
 		return valorCurso;
 	}
-	
-	
-	public static String value(Integer valor){
-		switch(valor){
+
+	public static String value(Integer valor) {
+		switch (valor) {
 		case 1:
 			return "CIENCIA DA COMPUTACAO";
 		case 2:
@@ -30,9 +30,7 @@ public enum EnumCurso {
 		default:
 			return "";
 		}
-	
+
 	}
-	
-	
-	
+
 }

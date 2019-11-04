@@ -58,7 +58,8 @@ public class Email {
 		}
 	}
 
-	public void sendEmailWithAttachment(String assunto, String mensagem, String fromEmail, String nomeTo, String localfile, String filename) {
+	public void sendEmailWithAttachment(String assunto, String mensagem, String fromEmail, String nomeTo,
+			String localfile, String filename) {
 		String[] ls = util.Facade.lerArquivoEmail();
 		try {
 			MimeMessage msg = new MimeMessage(this.createSessionMail());
@@ -77,7 +78,7 @@ public class Email {
 			messageBodyPart.setFileName(filename);
 			multipart.addBodyPart(messageBodyPart);
 			msg.setContent(multipart);
-			
+
 			Transport.send(msg);
 		} catch (MessagingException mex) {
 			mex.printStackTrace();

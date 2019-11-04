@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
-import util.Constantes;
 import util.ValidadorCPF;
 
 import model.Usuario;
@@ -62,7 +61,8 @@ public class Pessoa implements Serializable {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O Nome não poder ser nulo e deve possuir pelo menos 1 caracteres. Valor informado:: " + nome);
+					"Erro: O Nome nï¿½o poder ser nulo e deve possuir pelo menos 1 caracteres. Valor informado:: "
+							+ nome);
 		}
 
 	}
@@ -75,8 +75,7 @@ public class Pessoa implements Serializable {
 		if (ValidadorCPF.isCPF(cpf)) {
 			this.cpf = cpf;
 		} else {
-			throw new IllegalArgumentException(
-					"Erro: CPF informado não é válido. Valor informado:: "+ cpf);
+			throw new IllegalArgumentException("Erro: CPF informado nï¿½o ï¿½ vï¿½lido. Valor informado:: " + cpf);
 		}
 	}
 
@@ -88,7 +87,7 @@ public class Pessoa implements Serializable {
 		if (email.matches("^[aA-zZ][aA-zZ0-9_.\'-]*@[aA-zZ]+.[aA-zZ]*(.br)?$")) {
 			this.email = email;
 		} else {
-			throw new IllegalArgumentException("Erro: parâmetro e-mail inválido. Valor informado: " + email);
+			throw new IllegalArgumentException("Erro: parï¿½metro e-mail invï¿½lido. Valor informado: " + email);
 		}
 	}
 
@@ -115,17 +114,16 @@ public class Pessoa implements Serializable {
 			if (data.length == 3) {
 				this.setDataNascimento(
 						LocalDate.of(Integer.valueOf(data[2]), Integer.valueOf(data[1]), Integer.valueOf(data[0])));
-			}else if(dataSql.length == 3){
-				this.setDataNascimento(
-						LocalDate.of(Integer.valueOf(dataSql[0]), Integer.valueOf(dataSql[1]), Integer.valueOf(dataSql[2])));
-			}else {
+			} else if (dataSql.length == 3) {
+				this.setDataNascimento(LocalDate.of(Integer.valueOf(dataSql[0]), Integer.valueOf(dataSql[1]),
+						Integer.valueOf(dataSql[2])));
+			} else {
 				throw new RuntimeException(
-						"Erro: A data de nascimento não está no formato correto. Valor informado: " + dataNascimento);
+						"Erro: A data de nascimento nï¿½o estï¿½ no formato correto. Valor informado: " + dataNascimento);
 			}
-		}catch (DateTimeException e) { 
-			throw new DateTimeException(
-						"Erro: A data de nascimento não existe. Valor informado: " + dataNascimento);
-		
+		} catch (DateTimeException e) {
+			throw new DateTimeException("Erro: A data de nascimento nï¿½o existe. Valor informado: " + dataNascimento);
+
 		}
 	}
 }

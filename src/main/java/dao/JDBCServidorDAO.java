@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Aluno;
 import model.Servidor;
 import model.Usuario;
 
@@ -50,29 +49,26 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			ps.setString(1, servidor.getSiape());
 			ps.setString(2, servidor.getCargo().getCargo());
 			ps.setInt(3, servidor.getId());
-			
+
 			ps.executeUpdate();
 			ps.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao editar registro de servidor: "+ e.getMessage());
-		}finally {
+			throw new RuntimeException("Erro ao editar registro de servidor: " + e.getMessage());
+		} finally {
 			super.close();
 		}
 
 	}
-	
-	
+
 	@Override
 	public Servidor buscar(int id) {
 		super.open();
 		Servidor servidor = new Servidor();
-		Usuario usuario =  new Usuario();
-
+		Usuario usuario = new Usuario();
 
 		String SQL = "SELECT * FROM servidor as se, pessoa_usuario as pu WHERE  pu.id_pessoa_usuario = ? AND pu.id_pessoa_usuario = se.id_pessoa_usuario";
-
 
 		try {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
@@ -107,7 +103,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 		} finally {
 			super.close();
 		}
-		
+
 	}
 
 	public Servidor buscarPorSiape(String siape) {
@@ -253,7 +249,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			PreparedStatement ps = super.getConnection().prepareStatement(SQL);
 
 			ps.setString(1, token);
-			ps.setDate(2, Date.valueOf (LocalDate.now()));
+			ps.setDate(2, Date.valueOf(LocalDate.now()));
 
 			ResultSet rs = ps.executeQuery();
 
@@ -287,12 +283,14 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			super.close();
 		}
 	}
+
 	public List<Servidor> buscarPorNome(String nome, Integer inicio, Integer fim) {
 		super.open();
 		List<Servidor> servidores = new ArrayList<Servidor>();
 		try {
-			PreparedStatement ps = super.getConnection().prepareStatement("SELECT * FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) like UPPER(?) ORDER BY nome ASC LIMIT ? OFFSET ?;");
-			ps.setString(1, "%"+nome+"%");
+			PreparedStatement ps = super.getConnection().prepareStatement(
+					"SELECT * FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) like UPPER(?) ORDER BY nome ASC LIMIT ? OFFSET ?;");
+			ps.setString(1, "%" + nome + "%");
 			ps.setInt(2, fim - inicio);
 			ps.setInt(3, inicio);
 			ResultSet rs = ps.executeQuery();
@@ -327,13 +325,14 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 	public Integer getQuantidadePorNome(String nome) {
 		super.open();
 		try {
-			PreparedStatement ps = super.getConnection().prepareStatement("SELECT COUNT(*) AS quantidade FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) LIKE UPPER(?);");
-			ps.setString(1, "%"+nome+"%");
+			PreparedStatement ps = super.getConnection().prepareStatement(
+					"SELECT COUNT(*) AS quantidade FROM servidor AS s, pessoa_usuario as p WHERE s.id_pessoa_usuario = p.id_pessoa_usuario AND UPPER(nome) LIKE UPPER(?);");
+			ps.setString(1, "%" + nome + "%");
 			ResultSet rs = ps.executeQuery();
 			Integer quantidade = null;
 			if (rs.next()) {
 				quantidade = rs.getInt("quantidade");
-			}else {
+			} else {
 				quantidade = 0;
 			}
 			ps.close();

@@ -67,13 +67,13 @@ public class Facade {
 		Pessoa p = pDAO.buscarPorLogin(login);
 		Aluno aluno = DAOFactory.criarAlunoDAO().buscar(p.getId());
 		Servidor servidor = DAOFactory.criarServidorDAO().buscar(p.getId());
-		
-		if(servidor != null){
+
+		if (servidor != null) {
 			return servidor.getUsuario();
-		}else if (aluno != null){
+		} else if (aluno != null) {
 			return aluno.getUsuario();
 		}
-			
+
 		return p.getUsuario();
 	}
 
@@ -156,7 +156,7 @@ public class Facade {
 	public static List<Aluno> buscarAlunosPorNome(String nome, int inicio, int fim) {
 		return DAOFactory.criarAlunoDAO().buscarPorNome(nome, inicio, fim);
 	}
-	
+
 	public static Integer getQuantidadeAlunosPorNome(String nome) {
 		return DAOFactory.criarAlunoDAO().getQuantidadePorNome(nome);
 	}

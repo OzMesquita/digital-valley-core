@@ -8,7 +8,7 @@ public class Curso implements Serializable {
 	private int id;
 	private String nome;
 	private Professor coordenador;
-	
+
 	public Professor getCoordenador() {
 		return coordenador;
 	}
@@ -20,7 +20,7 @@ public class Curso implements Serializable {
 	public Curso(String descricao) {
 		this.nome = descricao;
 	}
-	
+
 	public Curso() {
 	}
 
@@ -32,7 +32,6 @@ public class Curso implements Serializable {
 		this.nome = nome;
 	}
 
-
 	public int getId() {
 		return id;
 	}
@@ -40,6 +39,5 @@ public class Curso implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
+
 }

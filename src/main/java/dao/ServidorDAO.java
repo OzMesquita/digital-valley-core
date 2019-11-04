@@ -7,7 +7,7 @@ import model.Servidor;
 public interface ServidorDAO {
 
 	public void cadastrar(Servidor servidor);
-	
+
 	public void editar(Servidor servidor);
 
 	public Servidor buscar(int id);
