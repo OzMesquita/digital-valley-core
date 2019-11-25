@@ -31,7 +31,7 @@ public class JDBCProfessorDAO extends JDBCDAO implements ProfessorDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar professor em JDBCProfessorDAO", e);
+			throw new RuntimeException("Falha ao cadastrar professor em JDBCProfessorDAO.", e);
 		}finally {
 			super.close();
 		}
@@ -67,7 +67,7 @@ public class JDBCProfessorDAO extends JDBCDAO implements ProfessorDAO{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de professor", e);
+			throw new RuntimeException("Erro ao buscar registro de professor.", e);
 		}finally {
 			super.close();
 		}
@@ -102,7 +102,7 @@ public class JDBCProfessorDAO extends JDBCDAO implements ProfessorDAO{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de professor", e);
+			throw new RuntimeException("Erro ao buscar registro de professor.", e);
 		}finally {
 			super.close();
 		}
@@ -138,7 +138,7 @@ public class JDBCProfessorDAO extends JDBCDAO implements ProfessorDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar professor em JDBCProfessorDAO", e);
+			throw new RuntimeException("Falha ao listar professor em JDBCProfessorDAO.", e);
 
 		}finally {
 			super.close();
@@ -171,7 +171,7 @@ public class JDBCProfessorDAO extends JDBCDAO implements ProfessorDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar professor em JDBCProfessorDAO", e);
+			throw new RuntimeException("Falha ao listar professor em JDBCProfessorDAO.", e);
 
 		}finally {
 			super.close();

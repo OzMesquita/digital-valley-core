@@ -32,7 +32,7 @@ public class Servidor extends Pessoa{
 			this.siape = siape;			
 		}else {
 			throw new IllegalArgumentException(
-					"Erro: O par√¢metro SIAPE n√£o pode ser nulo e deve ter 7 d√≠gitos, valor informado " + siape);
+					"Erro: O par‚metro SIAPE n„o pode ser nulo e deve ter 7 dÌgitos. Valor informado: " + siape);
 		}
 
 	}

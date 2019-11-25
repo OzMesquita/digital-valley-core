@@ -34,7 +34,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar servidor, " + e.getMessage());
+			throw new RuntimeException("Falha ao cadastrar servidor: " + e.getMessage());
 		} finally {
 			super.close();
 		}
@@ -103,7 +103,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
@@ -150,7 +150,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
@@ -193,7 +193,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
@@ -234,7 +234,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			return servidores;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC pessoaDAO", e);
+			throw new RuntimeException("Falha ao listar pessoas em JDBC pessoaDAO.", e);
 		} finally {
 			super.close();
 		}
@@ -282,7 +282,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			return null;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
@@ -317,7 +317,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			return servidores;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
@@ -341,7 +341,7 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			return quantidade;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de servidor", e);
+			throw new RuntimeException("Erro ao buscar registro de servidor.", e);
 		} finally {
 			super.close();
 		}
