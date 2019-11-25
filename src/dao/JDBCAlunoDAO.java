@@ -39,7 +39,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar um aluno:"+ e.getMessage());
+			throw new RuntimeException("Falha ao cadastrar um aluno. Erro: "+ e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -89,7 +89,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de aluno", e);
+			throw new RuntimeException("Erro ao buscar registro de aluno.", e);
 		}finally {
 			super.close();
 		}
@@ -140,7 +140,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de aluno", e);
+			throw new RuntimeException("Erro ao buscar registro de aluno.", e);
 		}finally {
 			super.close();
 		}
@@ -185,7 +185,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
+			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO.", e);
 
 		}finally {
 			super.close();
@@ -232,7 +232,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
+			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO.", e);
 
 		}finally {
 			super.close();
@@ -256,7 +256,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao editar registro de aluno", e);
+			throw new RuntimeException("Erro ao editar registro de aluno.", e);
 		}finally {
 			super.close();
 		}
@@ -299,7 +299,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro de aluno", e);
+			throw new RuntimeException("Erro ao buscar registro de aluno.", e);
 		}finally {
 			super.close();
 		}
@@ -347,7 +347,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
+			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO.", e);
 
 		}finally {
 			super.close();
@@ -373,7 +373,7 @@ public class JDBCAlunoDAO extends JDBCDAO implements AlunoDAO {
 			return quantidade;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO", e);
+			throw new RuntimeException("Falha ao listar pessoas em JDBC AlunoDAO.", e);
 		}finally {
 			super.close();
 		}

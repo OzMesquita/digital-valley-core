@@ -34,7 +34,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: "+e.getMessage());
+			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 
@@ -58,7 +58,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO: "+e.getMessage());
+			throw new RuntimeException("Falha ao cadastrar pessoas em JDBCPerfilDAO. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -78,7 +78,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao remover registro de pessoas em JDBC pessoaDAO", e);
+			throw new RuntimeException("Falha ao remover registro de pessoas em JDBC pessoaDAO.", e);
 
 		}finally {
 			super.close();
@@ -116,7 +116,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 
-			throw new RuntimeException("Erro ao buscar registro do perfil: "+e.getMessage());
+			throw new RuntimeException("Erro ao buscar registro do perfil. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -150,7 +150,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 
-			throw new RuntimeException("Erro ao buscar registro do perfil: "+e.getMessage());
+			throw new RuntimeException("Erro ao buscar registro do perfil. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -180,7 +180,7 @@ public class JDBCPerfilDAO extends JDBCDAO implements PerfilDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao listar pessoas em JDBC perfilDAO, erro: " + e.getMessage());
+			throw new RuntimeException("Falha ao listar pessoas em JDBC perfilDAO. Erro: " + e.getMessage());
 
 
 		}finally {

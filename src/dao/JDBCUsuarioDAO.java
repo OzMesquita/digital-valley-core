@@ -29,7 +29,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar usuarios em JDBCUsuaruioDAO", e);
+			throw new RuntimeException("Falha ao cadastrar usu·rios em JDBCUsuaruioDAO.", e);
 		} finally {
 			super.close();
 		}
@@ -51,7 +51,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao editar registro de usuario", e);
+			throw new RuntimeException("Erro ao editar registro de usuario.",e);
 		} finally {
 			super.close();
 		}
@@ -72,7 +72,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao editar registro de usuario", e);
+			throw new RuntimeException("Erro ao editar registro de usuario. ", e);
 		} finally {
 			super.close();
 		}
@@ -99,7 +99,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			rs.close();
 
 		} catch (SQLException e) {
-			throw new RuntimeException("Erro: login e senha inv√°lidos");
+			throw new RuntimeException("Erro: login e senha inv·lidos.");
 		} finally {
 			super.close();
 		}
@@ -120,7 +120,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erroao editar n√≠vel de usuario");
+			throw new RuntimeException("Erro ao editar nÌvel de usuario.");
 		} finally {
 			super.close();
 		}
@@ -140,7 +140,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao gravar token do usu√°rio" + e.getMessage());
+			throw new RuntimeException("Erro ao gravar token do usu·rio.",e);
 		} finally {
 			super.close();
 		}
@@ -158,7 +158,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			ps.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao gravar token do usu√°rio" + e.getMessage());
+			throw new RuntimeException("Erro ao gravar token do usu·rio.",e);
 		} finally {
 			super.close();
 		}
@@ -183,7 +183,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao buscar token de sess√£o, erro: " + e.getMessage());
+			throw new RuntimeException("Falha ao buscar token de sess„o. Erro: " + e.getMessage());
 		} finally {
 			super.close();
 		}
@@ -208,7 +208,7 @@ public class JDBCUsuarioDAO extends JDBCDAO implements UsuarioDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao buscar token de sess√£o, erro: " + e.getMessage());
+			throw new RuntimeException("Falha ao buscar token de sess„o. Erro: " + e.getMessage());
 		} finally {
 			super.close();
 		}

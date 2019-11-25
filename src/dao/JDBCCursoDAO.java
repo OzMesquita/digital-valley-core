@@ -31,7 +31,7 @@ public class JDBCCursoDAO extends JDBCDAO implements CursoDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Falha ao cadastrar curso, erro: "+ e.getMessage());
+			throw new RuntimeException("Falha ao cadastrar curso. Erro: "+ e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -70,7 +70,7 @@ public class JDBCCursoDAO extends JDBCDAO implements CursoDAO{
 			return curso;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro do curso"+e.getMessage());
+			throw new RuntimeException("Erro ao buscar registro do curso. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 		}
@@ -100,7 +100,7 @@ public class JDBCCursoDAO extends JDBCDAO implements CursoDAO{
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Erro ao buscar registro do curso"+e.getMessage());
+			throw new RuntimeException("Erro ao buscar registro do curso. Erro: "+e.getMessage());
 		}finally {
 			super.close();
 		}
