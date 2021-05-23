@@ -256,7 +256,6 @@ public class JDBCServidorDAO extends JDBCDAO implements ServidorDAO {
 			if (rs.next()) {
 				servidor.setNome(rs.getString("nome"));
 				servidor.setCpf(rs.getString("cpf"));
-				System.out.println(rs.getDate("data_nascimento"));
 				servidor.setDataNascimento(rs.getString("data_nascimento"));
 				servidor.setCargo(rs.getString("cargo"));
 				servidor.setEmail(rs.getString("email"));

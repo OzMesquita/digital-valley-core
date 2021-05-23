@@ -41,6 +41,7 @@ public class AlunoDAOTest {
 		System.out.println(aluno.getNome());
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarPorMatricula() {
 		AlunoDAO aDAO = DAOFactory.criarAlunoDAO();

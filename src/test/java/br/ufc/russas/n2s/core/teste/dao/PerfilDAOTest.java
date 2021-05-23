@@ -57,6 +57,7 @@ public class PerfilDAOTest {
 		org.junit.Assert.assertTrue(perfis != null);
 	}
 
+	@Ignore
 	@Test
 	public void testBucarPorNome() {
 		PerfilDAO pDAO = DAOFactory.criarPerfilDAO();

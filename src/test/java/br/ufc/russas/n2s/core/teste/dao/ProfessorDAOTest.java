@@ -53,7 +53,8 @@ public class ProfessorDAOTest {
 		}
 		Assert.assertTrue(professores != null);
 	}
-
+	
+	@Ignore
 	@Test
 	public void buscarPorSiape() {
 		ProfessorDAO pdao = DAOFactory.criarProfessorDAO();

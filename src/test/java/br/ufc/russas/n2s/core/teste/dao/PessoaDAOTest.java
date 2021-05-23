@@ -76,6 +76,7 @@ public class PessoaDAOTest {
 		//
 	}
 
+	@Ignore
 	@Test
 	public void listar() {
 		PessoaDAO pd = DAOFactory.criarPessoaDAO();
@@ -101,6 +102,7 @@ public class PessoaDAOTest {
 		Assert.assertTrue(pessoas != null);
 	}
 
+	@Ignore
 	@Test
 	public void testInserirToken() {
 		Pessoa p = new Pessoa();
@@ -110,6 +112,7 @@ public class PessoaDAOTest {
 		pDAO.inserirTokenRecuperacao(p);
 	}
 
+	@Ignore
 	@Test
 	public void testBuscarToken() {
 		PessoaDAO pDAO = DAOFactory.criarPessoaDAO();

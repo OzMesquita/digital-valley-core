@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Map;
+
 public class Constantes {
 
 	private static String APP_URL;
@@ -157,4 +159,17 @@ public class Constantes {
 	public static void setAppImgUserDir(String aPP_IMG_USER_DIR) {
 		APP_IMG_USER_DIR = aPP_IMG_USER_DIR;
 	}
+	
+	/**
+	 * Print system env properties used to debug .env file content 
+	 */
+	public static void printEnv() {
+
+		Map<String, String> env = System.getenv();
+		for (String envName : env.keySet()) {
+			System.out.format("%s=%s%n", envName, env.get(envName));
+		}
+
+	}
+	
 }

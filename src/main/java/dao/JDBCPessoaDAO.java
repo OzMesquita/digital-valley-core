@@ -276,7 +276,6 @@ public class JDBCPessoaDAO extends JDBCDAO implements PessoaDAO {
 		Pessoa pessoa = new Pessoa();
 		Usuario usuario = new Usuario();
 		pessoa.setUsuario(usuario);
-		System.out.println(cpf);
 		String SQL = "SELECT * FROM pessoa_usuario WHERE cpf = ?";
 		try {
 

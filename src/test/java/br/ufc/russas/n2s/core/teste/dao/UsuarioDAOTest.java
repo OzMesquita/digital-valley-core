@@ -30,6 +30,7 @@ public class UsuarioDAOTest {
 	}
 
 	// Passou no teste
+	@Ignore
 	@Test
 	public void editar() {
 		usuario.setLogin("Joao");
