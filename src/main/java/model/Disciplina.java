@@ -33,7 +33,7 @@ public class Disciplina {
 
 	public void setProfessor(Professor professor) {
 		if (professor == null)
-			throw new IllegalArgumentException("Erro: Professor inv�lido");
+			throw new IllegalArgumentException("Erro: Professor inválido");
 		this.professor = professor;
 	}
 
@@ -43,7 +43,7 @@ public class Disciplina {
 
 	public void setCurso(Curso curso) {
 		if (curso == null)
-			throw new IllegalArgumentException("Erro: Curso inv�lido");
+			throw new IllegalArgumentException("Erro: Curso inválido");
 		this.curso = curso;
 	}
 }

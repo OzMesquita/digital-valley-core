@@ -61,7 +61,7 @@ public class Pessoa implements Serializable {
 			this.nome = nome;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O Nome n�o poder ser nulo e deve possuir pelo menos 1 caracteres. Valor informado:: "
+					"Erro: O Nome não poder ser nulo e deve possuir pelo menos 1 caracteres. Valor informado:: "
 							+ nome);
 		}
 
@@ -75,7 +75,7 @@ public class Pessoa implements Serializable {
 		if (ValidadorCPF.isCPF(cpf)) {
 			this.cpf = cpf;
 		} else {
-			throw new IllegalArgumentException("Erro: CPF informado n�o � v�lido. Valor informado:: " + cpf);
+			throw new IllegalArgumentException("Erro: CPF informado não é válido. Valor informado:: " + cpf);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class Pessoa implements Serializable {
 		if (email.matches("^[aA-zZ][aA-zZ0-9_.\'-]*@[aA-zZ]+.[aA-zZ]*(.br)?$")) {
 			this.email = email;
 		} else {
-			throw new IllegalArgumentException("Erro: par�metro e-mail inv�lido. Valor informado: " + email);
+			throw new IllegalArgumentException("Erro: parâmetro e-mail inválido. Valor informado: " + email);
 		}
 	}
 
@@ -119,10 +119,10 @@ public class Pessoa implements Serializable {
 						Integer.valueOf(dataSql[2])));
 			} else {
 				throw new RuntimeException(
-						"Erro: A data de nascimento n�o est� no formato correto. Valor informado: " + dataNascimento);
+						"Erro: A data de nascimento não está no formato correto. Valor informado: " + dataNascimento);
 			}
 		} catch (DateTimeException e) {
-			throw new DateTimeException("Erro: A data de nascimento n�o existe. Valor informado: " + dataNascimento);
+			throw new DateTimeException("Erro: A data de nascimento não existe. Valor informado: " + dataNascimento);
 
 		}
 	}

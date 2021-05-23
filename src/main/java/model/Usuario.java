@@ -47,7 +47,7 @@ public class Usuario implements Serializable {
 			this.login = login;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O valor do login n�o pode ser nulo e deve possuir pelo menos 4 caracteres. Valor informado:: "
+					"Erro: O valor do login não pode ser nulo e deve possuir pelo menos 4 caracteres. Valor informado:: "
 							+ login);
 		}
 	}
@@ -61,7 +61,7 @@ public class Usuario implements Serializable {
 			this.senha = senha;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O valor da senha n�o pode ser nulo e deve possuir pelo menos 6 caracteres. Valor informado:: "
+					"Erro: O valor da senha não pode ser nulo e deve possuir pelo menos 6 caracteres. Valor informado:: "
 							+ senha);
 		}
 	}
@@ -79,7 +79,7 @@ public class Usuario implements Serializable {
 			this.perfil = perfil;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O valor do perfil n�o pode ser nulo. Valor informado:: " + perfil);
+					"Erro: O valor do perfil não pode ser nulo. Valor informado:: " + perfil);
 		}
 	}
 
@@ -99,7 +99,7 @@ public class Usuario implements Serializable {
 			break;
 		default:
 			throw new IllegalArgumentException(
-					"Erro: O valor do perfil n�o pode ser nulo ou invalido. Valor informado:: " + perfil);
+					"Erro: O valor do perfil não pode ser nulo ou invalido. Valor informado:: " + perfil);
 
 		}
 	}
@@ -118,7 +118,7 @@ public class Usuario implements Serializable {
 			break;
 		default:
 			throw new IllegalArgumentException(
-					"Erro: O valor do nivel n�o pode ser nulo ou invalido. Valor informado:: " + nivel);
+					"Erro: O valor do nivel não pode ser nulo ou invalido. Valor informado:: " + nivel);
 
 		}
 	}

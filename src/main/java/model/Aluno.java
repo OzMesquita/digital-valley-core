@@ -29,7 +29,7 @@ public class Aluno extends Pessoa {
 			this.matricula = matricula;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O par�metro MATRICULA n�o pode ser nulo e deve conter apenas d�gitos. Valor informado: "
+					"Erro: O parâmetro MATRICULA não pode ser nulo e deve conter apenas dígitos. Valor informado: "
 							+ matricula);
 		}
 	}
@@ -51,7 +51,7 @@ public class Aluno extends Pessoa {
 			this.semestreIngresso = semestreIngresso;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O par�metro SEMESTRE INGRESSO deve seguir o modelo <ano>.<1 ou 2> Ex: 2017.1. Valor informado: "
+					"Erro: O parâmetro SEMESTRE INGRESSO deve seguir o modelo <ano>.<1 ou 2> Ex: 2017.1. Valor informado: "
 							+ semestreIngresso);
 		}
 	}

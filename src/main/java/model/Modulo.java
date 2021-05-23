@@ -31,7 +31,7 @@ public class Modulo implements Serializable {
 			this.titulo = titulo;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: O titulo n�o pode ser nulo e deve ter pelo menos 1 caractere. Valor informado:: " + titulo);
+					"Erro: O titulo não pode ser nulo e deve ter pelo menos 1 caractere. Valor informado:: " + titulo);
 		}
 
 	}
@@ -45,7 +45,7 @@ public class Modulo implements Serializable {
 			this.url = url;
 		} else {
 			throw new IllegalArgumentException(
-					"Erro: A url n�o pode ser nula e deve ter pelo menos 1 caractere. Valor informado:: " + url);
+					"Erro: A url não pode ser nula e deve ter pelo menos 1 caractere. Valor informado:: " + url);
 		}
 
 	}
@@ -58,7 +58,7 @@ public class Modulo implements Serializable {
 		if (imagem != null) {
 			this.imagem = imagem;
 		} else {
-			throw new IllegalArgumentException("Erro: A imagem n�o pode ser nula. Valor informado:: " + imagem);
+			throw new IllegalArgumentException("Erro: A imagem não pode ser nula. Valor informado:: " + imagem);
 		}
 	}
 
