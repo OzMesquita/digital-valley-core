@@ -1,12 +1,17 @@
 package model;
 
 public enum EnumNivel {
-	ADMINISTRADOR(1), COMUM(2);
+	
+	// paulo.macedo: não é necessário esse inteiro valorNivel
+	ADMINISTRADOR(1,"Administrador"), 
+	COMUM(2,"Comum");
 
 	private int valorNivel;
-
-	EnumNivel(int valor) {
-		valorNivel = valor;
+	private String label;
+	
+	private EnumNivel(int valorNivel, String label) {
+		this.valorNivel = valorNivel;
+		this.label = label;
 	}
 
 	public int getValorNivel() {
@@ -14,6 +19,10 @@ public enum EnumNivel {
 			return 2;
 		}
 		return valorNivel;
+	}
+	
+	public String getLabel() {
+		return label;
 	}
 
 	public static String value(Integer valor) {

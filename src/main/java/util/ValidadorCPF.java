@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class ValidadorCPF {
 
 	public static boolean isCPF(String CPF) {
-		System.out.println(CPF);
+		
 		if (CPF.contains("."))
 			CPF = CPF.replace(".", "");
 		if (CPF.contains("-"))
